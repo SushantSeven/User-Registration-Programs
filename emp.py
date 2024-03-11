@@ -21,11 +21,16 @@ def is_valid_email(email):
 def is_valid_phone_no(phone_number):
     phone_pattern = r'^91\s{1}[0-9]{10}$' # creat a pattern to chcke a valid phone number
     return True if re.match(phone_pattern, phone_number) else False # return true if phone number is valid else False
-    
+
+# method to validate password
+def validate_password(password):
+    password_pattern = r'[\w\d,~`!@#$%^&*\)\(-=+]{8,}'
+    return True if re.match(password_pattern, password) else False  # return true if the password has minimum of 8 charachters
+
 # main function
 def main():
-    phone_number = input("\nEnter your phone number: ")
-    print("\nIt is a valid phone number!") if is_valid_phone_no(phone_number) is True else print("\nIt is not a valid Phone nummber!")
+    password = input("Enter your password: ")
+    print(validate_password(password))
 
 
 if __name__ == "__main__":
