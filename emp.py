@@ -1,7 +1,7 @@
 import re
 # method to check if the first name is valid
 def is_valid_First_name(first_name):
-    first_name_patttern = r'^[A-Z]'
+    first_name_patttern = r'^[A-Z]{1}+[a-z]{3,}'
     return bool(re.match(first_name_patttern,first_name)) # returns true if the first name is valid else false
 
 # main function
