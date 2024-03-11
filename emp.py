@@ -24,15 +24,13 @@ def is_valid_phone_no(phone_number):
 
 # method to validate password
 def validate_password(password):
-    password_pattern = r'[\w\d,~`!@#$%^&*\)\(-=+]{8,}' # pattern to check minimum 8 characters and atleast one numeric charachter
-    uppercase_pattern = r'[A-Z]+'
-    if re.match(password_pattern, password):
-        if re.match(uppercase_pattern, password):
-            return True
-        else:
-            return False
+    password_pattern = r'.{8,}' # pattern to check minimum 8 characters and atleast one numeric charachter
+    uppercase_pattern = r'[A-Z]' # patern to check if it has an upper case
+    numeric_pattern = r'\d' # pattern to check if it has a number
+    if (re.match(password_pattern, password) and re.search(uppercase_pattern, password) and re.search(numeric_pattern, password)):
+        return True
     else:
-        return False  # return False if the password is invalid
+        return False
 
 # main function
 def main():
