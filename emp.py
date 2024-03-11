@@ -17,15 +17,15 @@ def is_valid_email(email):
     else:
         return False
 
+# method to validate phone number
+def is_valid_phone_no(phone_number):
+    phone_pattern = r'^91\s{1}[0-9]{10}$' # creat a pattern to chcke a valid phone number
+    return True if re.match(phone_pattern, phone_number) else False # return true if phone number is valid else False
+    
 # main function
 def main():
-    while True: # loop until you enter a valid email
-        email = input("Enter your email address: ")
-        if is_valid_email(email) is True:
-            print("Valid email address entered:", email)
-            break
-        else:
-            print("Invalid email address. Please try again.")
+    phone_number = input("\nEnter your phone number: ")
+    print("\nIt is a valid phone number!") if is_valid_phone_no(phone_number) is True else print("\nIt is not a valid Phone nummber!")
 
 
 if __name__ == "__main__":
